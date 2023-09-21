@@ -8,9 +8,10 @@ import java.util.List;
 
 @Entity
 @Table (name="employee")
-@NamedQueries(@NamedQuery(name = "Employee.findAll", query = "select e from employee e"))
+//@NamedQueries(@NamedQuery(name = "Employee.findAll", query = "select e from employee e"))
 public class Employee {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "emp_id")
     private long id;
     @Column(name = "full_name", length = 150, nullable = false)

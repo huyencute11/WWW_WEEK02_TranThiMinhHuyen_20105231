@@ -5,15 +5,14 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "product_image")
 public class ProductImage {
-
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "image_id")
+    private long imageId;
+
     @ManyToOne
     @JoinColumn(name = "product_id", referencedColumnName = "product_id")
     private Product product;
-
-    @Id
-    @Column(name = "image_id")
-    private String imageId;
 
     @Column(name = "path", length = 255)
     private String path;
@@ -21,12 +20,12 @@ public class ProductImage {
     @Column(name = "alternative", length = 255)
     private String alternative;
 
-    public ProductImage(Product product, String imageId) {
+    public ProductImage(Product product, Long imageId) {
         this.product = product;
         this.imageId = imageId;
     }
 
-    public ProductImage(Product product, String imageId, String path, String alternative) {
+    public ProductImage(Product product, Long imageId, String path, String alternative) {
         this.product = product;
         this.imageId = imageId;
         this.path = path;

@@ -15,21 +15,21 @@ public class Product {
     @Column(name = "name", length = 250, nullable = false)
     private String name;
 
-    @Column(nullable = false)
+    @Column(name = "description", length = 250, nullable = false)
     private String description;
     @Column(nullable = false)
     private String unit;
     @Column(name = "manufacturer_name", nullable = false)
-    private String manufacturerName;
+    private String manufacturer;
 
     @Column(name = "status",nullable = false)
-    private ProductStatus productStatus;
+    private ProductStatus status;
 
     @OneToMany(mappedBy = "product")
     private List<ProductImage> productImageList;
 
 
-    @OneToMany
+    @OneToMany(mappedBy = "orderDetailPK.product")
     private List<OrderDetail> orderDetails;
 
     public Product(Long productID) {
@@ -39,15 +39,12 @@ public class Product {
 
     }
 
-    public Product(Long productID, String name, String description, String unit, String manufacturerName, ProductStatus productStatus, List<ProductImage> productImageList, List<OrderDetail> orderDetails) {
-        this.productID = productID;
+    public Product(String name, String description, String unit, String manufacturer, ProductStatus status) {
         this.name = name;
         this.description = description;
         this.unit = unit;
-        this.manufacturerName = manufacturerName;
-        this.productStatus = productStatus;
-        this.productImageList = productImageList;
-        this.orderDetails = orderDetails;
+        this.manufacturer = manufacturer;
+        this.status = status;
     }
 
 
@@ -84,19 +81,19 @@ public class Product {
     }
 
     public String getManufacturerName() {
-        return manufacturerName;
+        return manufacturer;
     }
 
     public void setManufacturerName(String manufacturerName) {
-        this.manufacturerName = manufacturerName;
+        this.manufacturer = manufacturerName;
     }
 
     public ProductStatus getProductStatus() {
-        return productStatus;
+        return status;
     }
 
     public void setProductStatus(ProductStatus productStatus) {
-        this.productStatus = productStatus;
+        this.status = productStatus;
     }
 
     public List<ProductImage> getProductImageList() {
@@ -122,8 +119,8 @@ public class Product {
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", unit='" + unit + '\'' +
-                ", manufacturerName='" + manufacturerName + '\'' +
-                ", productStatus=" + productStatus +
+                ", manufacturerName='" + manufacturer + '\'' +
+                ", productStatus=" + status +
                 ", productImageList=" + productImageList +
                 ", orderDetails=" + orderDetails +
                 '}';

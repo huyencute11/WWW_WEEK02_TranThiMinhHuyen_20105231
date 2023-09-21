@@ -6,7 +6,7 @@ import java.sql.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "order")
+@Table(name = "`order`")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,8 +23,7 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "cust_id", referencedColumnName = "cust_id")
     private Customer customer;
-
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "orderDetailPK.order", cascade = CascadeType.ALL)
     private List<OrderDetail> orderDetails;
 
     public Order() {
