@@ -37,6 +37,7 @@ dependencies {
 //  implementation 'org.mariadb.jdbc:mariadb-java-client:3.2.0'
   //for logging
 //  implementation 'org.mysql.jdbc:mysql-java-client:3.2.0'
+  //for logging
   implementation 'org.slf4j:slf4j-api:2.0.9'
   implementation 'org.slf4j:slf4j-simple:2.0.9'
   //for convert type in rest
