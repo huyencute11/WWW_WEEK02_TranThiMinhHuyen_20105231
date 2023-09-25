@@ -26,8 +26,7 @@ public class Customer {
         this.custId = custId;
     }
 
-    public Customer(Long custId, String custName, String email, String phone, String address) {
-        this.custId = custId;
+    public Customer( String custName, String email, String phone, String address) {
         this.custName = custName;
         this.email = email;
         this.phone = phone;

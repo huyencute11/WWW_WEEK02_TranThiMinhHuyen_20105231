@@ -3,32 +3,75 @@ package www.week2.www_lab02.repositories;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import www.week2.www_lab02.connectDB.ConnectDB;
+import www.week2.www_lab02.connectDB.MySessionFactory;
+import www.week2.www_lab02.enums.EmployeeStatus;
 import www.week2.www_lab02.models.Employee;
 
-public class EmployeeRepository {
-    private EntityManager em;
-    private EntityTransaction trans;
-    private final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
+import java.util.List;
+import java.util.Optional;
 
+public class EmployeeRepository {
+    private SessionFactory sessionFactory;
+    private final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
     public EmployeeRepository() {
-        em = Persistence.createEntityManagerFactory("lab_week_2")
-                .createEntityManager();
-        trans = em.getTransaction();
+        this.sessionFactory = MySessionFactory.getInstance().getSessionFactory();
+    }
+    public void insertEmp(Employee employee){
+        Transaction transaction = null;
+        try(Session session = sessionFactory.openSession()){
+            transaction = session.beginTransaction();
+            session.persist(employee);
+            transaction.commit();
+        }catch (Exception e){
+            logger.error(e.getMessage());
+            transaction.rollback();
+        }
+    }
+    public void setStatus(Employee employee , EmployeeStatus status){
+        employee.setStatus(status);
+    }
+    public void updateEmp(Employee employee){
+        Transaction transaction = null;
+        try(Session session = sessionFactory.openSession()){
+            transaction = session.beginTransaction();
+            session.merge(employee);
+            transaction.commit();
+        }catch (Exception e){
+            logger.error(e.getMessage());
+            transaction.rollback();
+        }
     }
 
-    public void insertEmp(Employee employee) {
-        try {
-            trans.begin();
-            em.persist(employee);
-            trans.commit();
-        } catch (Exception e) {
-            if (trans.isActive()) {
-                trans.rollback();
-            }
-            logger.error("Error inserting employee: " + e.getMessage());
+    public Optional<Employee> findById(long id){
+        Transaction transaction = null;
+        try(Session session = sessionFactory.openSession()){
+            transaction = session.beginTransaction();
+            Employee employee = session.get(Employee.class, id);
+            transaction.commit();
+            return Optional.ofNullable(employee);
+        }catch (Exception e){
+            logger.error(e.getMessage());
+            transaction.rollback();
         }
+        return Optional.empty();
+    }
+    public List<Employee> getAllEmp(){
+        Transaction transaction = null;
+        try(Session session = sessionFactory.openSession()){
+            transaction = session.beginTransaction();
+            List<Employee> employees = session.createQuery("from Employee",Employee.class).getResultList();
+            transaction.commit();
+            return employees;
+        }catch (Exception e){
+            logger.error(e.getMessage());
+            transaction.rollback();
+        }
+        return null;
     }
 }

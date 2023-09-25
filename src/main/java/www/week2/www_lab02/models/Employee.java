@@ -29,7 +29,7 @@ public class Employee {
     @Column(nullable = false)
     private EmployeeStatus status;
 
-    @OneToMany(mappedBy = "employee")
+    @OneToMany(mappedBy = "employee",fetch = FetchType.EAGER)
     private List<Order> listOrder;
 
     public Employee() {
@@ -49,7 +49,14 @@ public class Employee {
         this.status = status;
     }
 
-
+    public Employee(String fullName, Date dob, String email, String phone, String address, EmployeeStatus status) {
+        this.fullName = fullName;
+        this.dob = dob;
+        this.email = email;
+        this.phone = phone;
+        this.address = address;
+        this.status = status;
+    }
 
     public long getId() {
         return id;
