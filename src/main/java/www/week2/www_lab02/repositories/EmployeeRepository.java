@@ -1,14 +1,10 @@
 package www.week2.www_lab02.repositories;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityTransaction;
-import jakarta.persistence.Persistence;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import www.week2.www_lab02.connectDB.ConnectDB;
 import www.week2.www_lab02.connectDB.MySessionFactory;
 import www.week2.www_lab02.enums.EmployeeStatus;
 import www.week2.www_lab02.models.Employee;
@@ -71,6 +67,22 @@ public class EmployeeRepository {
         }catch (Exception e){
             logger.error(e.getMessage());
             transaction.rollback();
+        }
+        return null;
+    }
+
+    public Employee getEmpById(int employeeId) {
+        Transaction transaction = null;
+        try (Session session = sessionFactory.openSession()) {
+            transaction = session.beginTransaction();
+            Employee employee = session.get(Employee.class, employeeId);
+            transaction.commit();
+            return employee;
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            if (transaction != null) {
+                transaction.rollback();
+            }
         }
         return null;
     }

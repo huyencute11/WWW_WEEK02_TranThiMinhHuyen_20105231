@@ -52,6 +52,22 @@ public class ProductImage {
         this.alternative = alternative;
     }
 
+    public long getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(long imageId) {
+        this.imageId = imageId;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
     @Override
     public String toString() {
         return "ProductImage{" +

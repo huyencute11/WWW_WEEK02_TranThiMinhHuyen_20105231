@@ -4,9 +4,20 @@ import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.sql.Date;
-
 @Entity
 @Table(name = "product_price")
+@NamedQueries({
+        @NamedQuery(
+                name = "product_price.findAllPriceByProductId",
+                query = "SELECT pp FROM ProductPrice pp WHERE pp.product.id = :productId"
+        ),
+        @NamedQuery(
+                name = "ProductPrice.findOldestPriceByProductId",
+                query = "SELECT pp FROM ProductPrice pp WHERE pp.product.id = :productId " +
+                        "ORDER BY pp.priceDateTime DESC"
+        )
+
+})
 public class ProductPrice implements Serializable {
     @Id
     @ManyToOne
@@ -66,4 +77,13 @@ public class ProductPrice implements Serializable {
         this.note = note;
     }
 
+    @Override
+    public String toString() {
+        return "ProductPrice{" +
+                "product=" + product +
+                ", priceDateTime=" + priceDateTime +
+                ", price=" + price +
+                ", note='" + note + '\'' +
+                '}';
+    }
 }

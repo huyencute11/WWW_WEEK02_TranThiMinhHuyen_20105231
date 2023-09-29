@@ -1,5 +1,6 @@
 package www.week2.www_lab02.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.sql.Date;
@@ -23,7 +24,8 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "cust_id", referencedColumnName = "cust_id")
     private Customer customer;
-    @OneToMany(mappedBy = "orderDetailPK.order", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "orderDetailPK.order", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
     private List<OrderDetail> orderDetails;
 
     public Order() {
@@ -35,6 +37,12 @@ public class Order {
     }
 
     public Order(Long orderId, Date orderDate, Employee employee, Customer customer) {
+        this.orderId = orderId;
+        this.orderDate = orderDate;
+        this.employee = employee;
+        this.customer = customer;
+    }
+    public Order(Date orderDate, Employee employee, Customer customer) {
         this.orderId = orderId;
         this.orderDate = orderDate;
         this.employee = employee;
@@ -88,7 +96,6 @@ public class Order {
                 ", orderDate=" + orderDate +
                 ", employee=" + employee +
                 ", customer=" + customer +
-                ", orderDetails=" + orderDetails +
                 '}';
     }
 }

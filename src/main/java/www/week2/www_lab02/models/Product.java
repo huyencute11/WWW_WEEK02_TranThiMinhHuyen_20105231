@@ -1,5 +1,6 @@
 package www.week2.www_lab02.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import www.week2.www_lab02.enums.ProductStatus;
 
@@ -25,11 +26,14 @@ public class Product {
     @Column(name = "status",nullable = false)
     private ProductStatus status;
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
+    @JsonIgnore
     private List<ProductImage> productImageList;
 
 
-    @OneToMany(mappedBy = "orderDetailPK.product")
+    @OneToMany(mappedBy = "orderDetailPK.product", fetch = FetchType.EAGER)
+//    @OneToMany(mappedBy = "employee",fetch = FetchType.EAGER)
+    @JsonIgnore
     private List<OrderDetail> orderDetails;
 
     public Product(Long productID) {
@@ -121,8 +125,8 @@ public class Product {
                 ", unit='" + unit + '\'' +
                 ", manufacturerName='" + manufacturer + '\'' +
                 ", productStatus=" + status +
-                ", productImageList=" + productImageList +
-                ", orderDetails=" + orderDetails +
+//                ", productImageList=" + productImageList +
+//                ", orderDetails=" + orderDetails +
                 '}';
     }
 }

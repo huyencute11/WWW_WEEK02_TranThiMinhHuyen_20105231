@@ -1,42 +1,40 @@
 package www.week2.www_lab02.repositories;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityTransaction;
-import jakarta.persistence.Persistence;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import www.week2.www_lab02.connectDB.MySessionFactory;
-import www.week2.www_lab02.models.Customer;
+import www.week2.www_lab02.models.Order;
+import www.week2.www_lab02.models.ProductImage;
 
 import java.util.List;
 
-public class CustomerReponsitory {
+public class OrderReponsitory {
     private SessionFactory sessionFactory;
     private final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
-    public CustomerReponsitory() {
+    public OrderReponsitory() {
         this.sessionFactory = MySessionFactory.getInstance().getSessionFactory();
     }
-    public void insertCust(Customer customer) {
+    public void insertOrder(Order order) {
         Transaction transaction = null;
         try(Session session = sessionFactory.openSession()){
             transaction = session.beginTransaction();
-            session.persist(customer);
+            session.persist(order);
             transaction.commit();
         }catch (Exception e){
             logger.error(e.getMessage());
             transaction.rollback();
         }
     }
-    public List<Customer> getAllEmp(){
+    public List<Order> getAllOrder(){
         Transaction transaction = null;
         try(Session session = sessionFactory.openSession()){
             transaction = session.beginTransaction();
-            List<Customer> customers = session.createQuery("from Customer ",Customer.class).getResultList();
+            List<Order> orders = session.createQuery("from Order ",Order.class).getResultList();
             transaction.commit();
-            return customers;
+            return orders;
         }catch (Exception e){
             logger.error(e.getMessage());
             transaction.rollback();
@@ -44,13 +42,13 @@ public class CustomerReponsitory {
         return null;
     }
 
-    public Customer getCusById(int customerId) {
+    public Order getOrderById(int orderId) {
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
-            Customer cus = session.get(Customer.class, customerId);
+            Order orders = session.get(Order.class, orderId);
             transaction.commit();
-            return cus;
+            return orders;
         } catch (Exception e) {
             logger.error(e.getMessage());
             if (transaction != null) {

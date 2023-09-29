@@ -1,5 +1,6 @@
 package www.week2.www_lab02.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import www.week2.www_lab02.enums.EmployeeStatus;
 
@@ -30,6 +31,7 @@ public class Employee {
     private EmployeeStatus status;
 
     @OneToMany(mappedBy = "employee",fetch = FetchType.EAGER)
+    @JsonIgnore
     private List<Order> listOrder;
 
     public Employee() {
@@ -128,7 +130,6 @@ public class Employee {
                 ", phone='" + phone + '\'' +
                 ", address='" + address + '\'' +
                 ", status=" + status +
-                ", listOrder=" + listOrder +
                 '}';
     }
 

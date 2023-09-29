@@ -7,8 +7,17 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "order_detail")
+@NamedQueries({
+        @NamedQuery(
+                name = "OrderDetail.findOrderDetailByOrderId",
+                query = "SELECT od FROM OrderDetail od WHERE od.orderDetailPK.order.orderId = :orderId"
+        ),
+        @NamedQuery(
+                name = "OrderDetail.findOrderDetailByProductId",
+                query = "SELECT od FROM OrderDetail od WHERE od.orderDetailPK.product.id = :productId"
+        )
+})
 public class OrderDetail {
-
     @EmbeddedId
     private OrderDetailPK orderDetailPK;
 
@@ -63,6 +72,9 @@ public class OrderDetail {
     public void setNote(String note) {
         this.note = note;
     }
+    public double getTotalPrice(){
+        return this.price * this.quantity;
+    }
 
     @Override
     public String toString() {
@@ -70,6 +82,7 @@ public class OrderDetail {
                 "orderDetailPK=" + orderDetailPK +
                 ", quantity=" + quantity +
                 ", price=" + price +
+                ", total=" + getTotalPrice() +
                 ", note='" + note + '\'' +
                 '}';
     }
