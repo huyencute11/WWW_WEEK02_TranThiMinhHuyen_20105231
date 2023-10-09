@@ -41,13 +41,15 @@ public class ProductImageReponsitory {
         return null;
     }
 
-    public ProductImage getProductImageById(int productImageId) {
+    public List<ProductImage> getProductImageById(int productImageId) {
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
-            ProductImage productImage = session.get(ProductImage.class, productImageId);
+            List<ProductImage> productImages = session.createNamedQuery("ProductImage.findImagesByIdProduct", ProductImage.class)
+                    .setParameter("productId", productImageId) // Set the parameter for the named query
+                    .getResultList();
             transaction.commit();
-            return productImage;
+            return productImages;
         } catch (Exception e) {
             logger.error(e.getMessage());
             if (transaction != null) {

@@ -4,6 +4,12 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "product_image")
+@NamedQueries(
+        @NamedQuery(
+                name = "ProductImage.findImagesByIdProduct",
+                query = "SELECT p FROM ProductImage p WHERE p.product.id = :productId"
+        )
+)
 public class ProductImage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,6 +18,7 @@ public class ProductImage {
 
     @ManyToOne
     @JoinColumn(name = "product_id", referencedColumnName = "product_id")
+
     private Product product;
 
     @Column(name = "path", length = 255)

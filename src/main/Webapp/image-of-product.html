@@ -1,0 +1,72 @@
+<html>
+<head>
+    <title>Image product</title>
+    <style>
+        /* Style the container for the images */
+        #imageContainer {
+            display: flex; /* Display images in a row */
+            flex-wrap: wrap; /* Wrap images to the next row if they don't fit */
+            justify-content: center; /* Center the images horizontally */
+            gap: 10px; /* Add spacing between images */
+        }
+
+        /* Style individual images */
+        #imageContainer img {
+            max-width: 100%; /* Ensure images don't exceed the container width */
+            height: auto; /* Maintain aspect ratio */
+            border: 1px solid #ddd; /* Add a border around each image */
+            padding: 5px; /* Add padding around each image */
+        }
+    </style>
+</head>
+<body>
+<h1 id="title"></h1>
+<div id="imageContainer"></div>
+</body>
+</html>
+<script>
+    const titleElement = document.getElementById("title");
+    const imageContainer = document.getElementById("imageContainer");
+
+    function getQueryParam(name) {
+        const searchParams = new URLSearchParams(window.location.search);
+        return searchParams.get(name);
+    }
+
+    const handleCallApi = () => {
+        const productId = getQueryParam('id');
+        const url = `http://localhost:8081/week2/api/productImage/${productId}`
+
+        if (productId !== null) {
+            fetch(url)
+                .then(response => {
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data);
+                    // Display the product title
+                    // titleElement.textContent = data.title;
+                    if(data){
+                        data.forEach(image => {
+                            const imgElement = document.createElement("img");
+                            imgElement.src = image.path;
+                            imgElement.alt = "Product Image";
+                            imageContainer.appendChild(imgElement);
+                        });
+                    }
+                    else{
+                        imageContainer.innerHTML =  `<h1>Product Image<h1>`
+                    }
+                    // Create and display image elements
+
+                })
+                .catch(error => {
+                    console.error("Error fetching data:", error);
+                });
+        } else {
+            console.error("Product ID not found in the URL");
+        }
+    }
+
+    window.onload = handleCallApi;
+</script>

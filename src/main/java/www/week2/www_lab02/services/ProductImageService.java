@@ -5,6 +5,8 @@ import jakarta.ws.rs.core.Response;
 import www.week2.www_lab02.models.ProductImage;
 import www.week2.www_lab02.repositories.ProductImageReponsitory;
 
+import java.util.List;
+
 @Path("/productImage")
 public class ProductImageService {
     ProductImageReponsitory productImageReponsitory = new ProductImageReponsitory();
@@ -24,7 +26,7 @@ public class ProductImageService {
     @Path("/{productImageId}")
     @Produces("application/json")
     public Response getProductImageById(@PathParam("productImageId") int productImageId) {
-        ProductImage productImage = productImageReponsitory.getProductImageById(productImageId);
+        List<ProductImage> productImage = productImageReponsitory.getProductImageById(productImageId);
         if (productImage != null) {
             return Response.ok(productImage).build();
         } else {
