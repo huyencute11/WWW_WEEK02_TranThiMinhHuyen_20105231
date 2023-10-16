@@ -13,10 +13,10 @@
   <h1>Home Page</h1>
   <div class="row">
     <div class="col-md-4">
-      <a href="dashboardEmployee.jsp" class="btn btn-primary btn-lg btn-block">List Employee</a>
+      <a href="dashboardEmployee.html" class="btn btn-primary btn-lg btn-block">List Employee</a>
     </div>
     <div class="col-md-4">
-      <a href="list-customer.jsp" class="btn btn-success btn-lg btn-block">List Customer</a>
+      <a href="list-customer.html" class="btn btn-success btn-lg btn-block">List Customer</a>
     </div>
     <div class="col-md-4">
       <a href="list-product.html" class="btn btn-info btn-lg btn-block">List Product</a>

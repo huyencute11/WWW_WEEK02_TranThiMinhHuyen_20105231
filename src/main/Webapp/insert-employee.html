@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container sm">
+    <form class="container mt-5" id="employee-form">
+        <div class="form-group">
+            <label for="full_name">Full Name</label>
+            <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Enter full name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter phone" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" name="address" placeholder="Enter address" required>
+        </div>
+        <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" class="form-control" id="dob" name="dob" required>
+        </div>
+        <div class="form-group">
+            <label for="status">Status</label>
+            <select class="form-control" id="status" name="status">
+                <option value="active" selected>Active</option>
+                <option value="inactive">Inactive</option>
+                <!-- Add more options if needed -->
+            </select>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Submit">
+        <input type="reset" class="btn btn-secondary" value="Reset">
+        <input type="hidden" name="custId" value="">
+    </form>
+    <script>
+        const form = document.getElementById("employee-form");
+
+        const data2 =  {
+            "custName": "Le Minh aa",
+            "email": "Minhâ@gmail.com",
+            "phone": "0387596512",
+            "address": "Phu Nhuan, Ho Chi Minh"
+        }
+        form.addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const data = {
+                full_name: document.getElementById("full_name").value,
+                email: document.getElementById("email").value,
+                phone: document.getElementById("phone").value,
+                address: document.getElementById("address").value,
+                dob: document.getElementById("dob").value,
+                status: document.getElementById("status").value
+            };
+            debugger;
+            // Collect form data
+            // const formData = new FormData(form);
+            try {
+                // Send a POST request to the API
+                const response = await fetch("http://localhost:8081/week2/api/employees", {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    method: "POST",
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    alert("Employee added successfully!");
+                    form.reset(); // Clear the form
+                } else {
+                    alert("Failed to add employee. Please try again.");
+                }
+            } catch (error) {
+                console.error("An error occurred:", error);
+            }
+        });
+    </script>
+</div>
+
+</body>
+
+
+</html>

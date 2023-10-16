@@ -19,13 +19,13 @@ public class EmployeeRepository {
         this.sessionFactory = MySessionFactory.getInstance().getSessionFactory();
     }
     public void insertEmp(Employee employee){
-        Transaction transaction = null;
-        try(Session session = sessionFactory.openSession()){
-            transaction = session.beginTransaction();
+       Transaction transaction = null;
+       try(Session session = sessionFactory.openSession()){
+           transaction = session.beginTransaction();
             session.persist(employee);
             transaction.commit();
-        }catch (Exception e){
-            logger.error(e.getMessage());
+       }catch (Exception e){
+           logger.error(e.getMessage());
             transaction.rollback();
         }
     }
@@ -62,6 +62,9 @@ public class EmployeeRepository {
         try(Session session = sessionFactory.openSession()){
             transaction = session.beginTransaction();
             List<Employee> employees = session.createQuery("from Employee",Employee.class).getResultList();
+            employees.forEach(e->{
+                System.out.println(e.getStatus());
+            });
             transaction.commit();
             return employees;
         }catch (Exception e){
