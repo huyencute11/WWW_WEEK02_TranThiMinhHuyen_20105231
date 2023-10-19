@@ -19,6 +19,7 @@ public class EmployeeRepository {
         this.sessionFactory = MySessionFactory.getInstance().getSessionFactory();
     }
     public void insertEmp(Employee employee){
+        System.out.println(employee);
        Transaction transaction = null;
        try(Session session = sessionFactory.openSession()){
            transaction = session.beginTransaction();

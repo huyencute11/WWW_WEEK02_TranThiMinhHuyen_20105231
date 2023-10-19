@@ -64,8 +64,8 @@
                     row.insertCell(6).textContent = employee.status;
                     const linkCell = row.insertCell(7);
                     const link = document.createElement("a");
-                    link.href = './insert-employee.html';
-                    link.textContent = 'Insert employee'; // You can change the link text as needed
+                    link.href = './update-employee.html?id=' + employee.id;
+                    link.textContent = 'Update employee'; // You can change the link text as needed
                     linkCell.appendChild(link);
                 });
             })

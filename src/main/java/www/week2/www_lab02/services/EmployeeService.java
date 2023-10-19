@@ -22,7 +22,14 @@ public class EmployeeService {
         employeeRepository.insertEmp(employee);
         return Response.ok(employee).build();
     }
-
+    @POST
+    @Path("/update")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response update(Employee employee) {
+        employeeRepository.updateEmp(employee);
+        return Response.ok(employee).build();
+    }
     @GET
     @Path("/{employeeId}")
     @Produces("application/json")
