@@ -90,4 +90,28 @@ public class EmployeeRepository {
         }
         return null;
     }
+    //delete
+    public boolean deleteEmployeeById(int employeeId) {
+        Transaction transaction = null;
+        try (Session session = sessionFactory.openSession()) {
+            transaction = session.beginTransaction();
+
+            // Retrieve the employee by ID
+            Employee employee = session.get(Employee.class, employeeId);
+
+            if (employee != null) {
+                session.remove(employee);
+                return true;
+            }
+
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            logger.error("Error deleting employee: " + e.getMessage());
+        }
+        return false;
+    }
+
 }

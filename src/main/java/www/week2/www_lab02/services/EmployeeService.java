@@ -30,13 +30,24 @@ public class EmployeeService {
         employeeRepository.updateEmp(employee);
         return Response.ok(employee).build();
     }
-    @GET
+    @DELETE
     @Path("/{employeeId}")
     @Produces("application/json")
     public Response getEmployeeById(@PathParam("employeeId") int employeeId) {
         Employee employee = employeeRepository.getEmpById(employeeId);
         if (employee != null) {
-            return Response.ok(employee).build();
+            return Response.ok("OK").build();
+        } else {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+    }
+    @POST
+    @Path("/{employeeId}")
+    @Produces("application/json")
+    public Response deleteEmployeeById(@PathParam("employeeId") int employeeId) {
+        boolean deleted = employeeRepository.deleteEmployeeById(employeeId);
+        if (deleted) {
+            return Response.status(Response.Status.NO_CONTENT).build();
         } else {
             return Response.status(Response.Status.NOT_FOUND).build();
         }

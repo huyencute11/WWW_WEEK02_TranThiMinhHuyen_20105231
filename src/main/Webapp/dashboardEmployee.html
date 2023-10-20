@@ -20,7 +20,10 @@
             background-color: #f2f2f2;
         }
     </style>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
 <table>
@@ -34,6 +37,7 @@
         <th>Address</th>
         <th>Status </th>
         <th>Action</th>
+        <th>Delete</th>
     </tr>
     </thead>
     <tbody id="employee-list">
@@ -46,7 +50,25 @@
 <script>
     function fetchAndPopulateTable() {
         const tableBody = document.getElementById("employee-list");
-
+        // Function to handle the employee deletion
+        function handleDeleteClick(employeeId) {
+            // Make an API request to delete the employee with the given ID
+            fetch(`http://localhost:8081/week2/api/employees/${employeeId}`, {
+                method: 'POST',
+            })
+                .then(response => {
+                    if (response.status === 204) {
+                        // Employee was successfully deleted, remove the row from the table
+                        const row = document.getElementById(`employee-row-${employeeId}`);
+                        if (row) {
+                            tableBody.removeChild(row);
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error("Error deleting employee:", error);
+                });
+        }
         // Fetch data from the API
         fetch("http://localhost:8081/week2/api/employees")
             .then(response => response.json())
@@ -67,6 +89,13 @@
                     link.href = './update-employee.html?id=' + employee.id;
                     link.textContent = 'Update employee'; // You can change the link text as needed
                     linkCell.appendChild(link);
+                    const deleteCell = row.insertCell(8);
+                    const deleteButton = document.createElement("button");
+                    deleteButton.textContent = "Delete";
+                    deleteButton.addEventListener("click", () => {
+                        handleDeleteClick(employee.id); // Handle delete when the button is clicked
+                    });
+                    deleteCell.appendChild(deleteButton);
                 });
             })
             .catch(error => {
