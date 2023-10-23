@@ -33,12 +33,4 @@ public class OrderService {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
     }
-
-    @GET
-    @Path("/hello")
-    @Produces("application/json")
-    public Response getHello() {
-        return Response.ok("Hello").build();
-
-    }
 }

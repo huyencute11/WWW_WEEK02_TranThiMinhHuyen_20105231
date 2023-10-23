@@ -53,16 +53,17 @@
         // Function to handle the employee deletion
         function handleDeleteClick(employeeId) {
             // Make an API request to delete the employee with the given ID
-            fetch(`http://localhost:8081/week2/api/employees/${employeeId}`, {
+            fetch(`http://localhost:8081/week2/api/employees/update-status/${employeeId}`, {
                 method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(1)
             })
                 .then(response => {
-                    if (response.status === 204) {
-                        // Employee was successfully deleted, remove the row from the table
-                        const row = document.getElementById(`employee-row-${employeeId}`);
-                        if (row) {
-                            tableBody.removeChild(row);
-                        }
+                    console.log(response)
+                    if (response.status === 200) {
+                        window.location.reload();
                     }
                 })
                 .catch(error => {

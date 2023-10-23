@@ -19,7 +19,6 @@ public class EmployeeRepository {
         this.sessionFactory = MySessionFactory.getInstance().getSessionFactory();
     }
     public void insertEmp(Employee employee){
-        System.out.println(employee);
        Transaction transaction = null;
        try(Session session = sessionFactory.openSession()){
            transaction = session.beginTransaction();
@@ -30,8 +29,32 @@ public class EmployeeRepository {
             transaction.rollback();
         }
     }
-    public void setStatus(Employee employee , EmployeeStatus status){
-        employee.setStatus(status);
+    public void updateStatus(Employee employee , EmployeeStatus status){
+        Transaction transaction = null;
+        try (Session session = sessionFactory.openSession()) {
+            transaction = session.beginTransaction();
+
+            // Execute the named query "Employee.updateStatus"
+            int updatedCount = session.createNamedQuery("Employee.updateStatus")
+                    .setParameter("status", status)
+                    .setParameter("id", employee.getId())
+                    .executeUpdate();
+
+            if (updatedCount == 1) {
+                // The update was successful
+                employee.setStatus(status); // Update the local employee object
+                transaction.commit();
+            } else {
+                // Handle the case where the update didn't affect any rows (no employee with the specified ID)
+                logger.error("Employee with ID " + employee.getId() + " not found.");
+                transaction.rollback();
+            }
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        }
     }
     public void updateEmp(Employee employee){
         Transaction transaction = null;
@@ -62,10 +85,7 @@ public class EmployeeRepository {
         Transaction transaction = null;
         try(Session session = sessionFactory.openSession()){
             transaction = session.beginTransaction();
-            List<Employee> employees = session.createQuery("from Employee",Employee.class).getResultList();
-            employees.forEach(e->{
-                System.out.println(e.getStatus());
-            });
+            List<Employee>  employees = session.createNamedQuery("Employee.findAll", Employee.class).getResultList();
             transaction.commit();
             return employees;
         }catch (Exception e){

@@ -9,7 +9,16 @@ import java.util.List;
 
 @Entity
 @Table (name="employee")
-//@NamedQueries(@NamedQuery(name = "Employee.findAll", query = "select e from employee e"))
+@NamedQueries({
+        @NamedQuery(
+                name = "Employee.findAll",
+                query = "SELECT e FROM Employee e WHERE e.status != 1"
+        ),
+        @NamedQuery(
+                name = "Employee.updateStatus",
+                query = "UPDATE Employee e SET e.status = :status WHERE e.id = :id"
+        )
+})
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

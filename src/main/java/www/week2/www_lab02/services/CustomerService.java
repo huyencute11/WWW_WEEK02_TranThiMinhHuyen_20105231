@@ -3,6 +3,7 @@ package www.week2.www_lab02.services;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Response;
 import www.week2.www_lab02.models.Customer;
+import www.week2.www_lab02.models.Employee;
 import www.week2.www_lab02.repositories.CustomerReponsitory;
 
 @Path("/customer")
@@ -30,6 +31,14 @@ public class CustomerService {
         } else {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
+    }
+    @POST
+    @Path("/update")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response update(Customer customer) {
+        customerReponsitory.updateCus(customer);
+        return Response.ok(customer).build();
     }
 
     @GET

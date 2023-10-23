@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import www.week2.www_lab02.connectDB.MySessionFactory;
 import www.week2.www_lab02.models.Customer;
+import www.week2.www_lab02.models.Employee;
 
 import java.util.List;
 
@@ -43,7 +44,6 @@ public class CustomerReponsitory {
         }
         return null;
     }
-
     public Customer getCusById(int customerId) {
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession()) {
@@ -58,5 +58,16 @@ public class CustomerReponsitory {
             }
         }
         return null;
+    }
+    public void updateCus(Customer customer){
+        Transaction transaction = null;
+        try(Session session = sessionFactory.openSession()){
+            transaction = session.beginTransaction();
+            session.merge(customer);
+            transaction.commit();
+        }catch (Exception e){
+            logger.error(e.getMessage());
+            transaction.rollback();
+        }
     }
 }
