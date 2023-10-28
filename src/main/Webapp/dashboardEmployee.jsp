@@ -47,7 +47,7 @@
         const tableBody = document.getElementById("employee-list");
 
         // Fetch data from the API
-        fetch("http://localhost:8081/week2/api/employees")
+        fetch("http://localhost:8081/Gradle___www_week2___WWW_Lab02_1_0_SNAPSHOT_war/api/employees")
             .then(response => response.json())
             .then(data => {
                 data.forEach(employee => {

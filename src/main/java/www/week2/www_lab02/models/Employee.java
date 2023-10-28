@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import www.week2.www_lab02.enums.EmployeeStatus;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 @Entity

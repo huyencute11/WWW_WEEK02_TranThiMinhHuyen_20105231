@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea6a507d-68c3-4ce0-a792-26224431cc2a" name="Changes" comment="method call api">
-      <change afterPath="$PROJECT_DIR$/src/main/Webapp/Home.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Webapp/dashboardEmployee.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Webapp/list-customer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/AppletServer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Main.xml" afterDir="false" />
+    <list default="true" id="ea6a507d-68c3-4ce0-a792-26224431cc2a" name="Changes" comment="Create database">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/database_week02.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/database_week02.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Webapp/dashboardEmployee.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Webapp/dashboardEmployee.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Webapp/image-of-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Webapp/image-of-product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Webapp/list-customer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Webapp/list-customer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Webapp/list-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Webapp/list-product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/models/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/models/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +27,6 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <task path="$PROJECT_DIR$">
-          <activation />
-        </task>
         <projects_view>
           <tree_state>
             <expand />
@@ -45,27 +41,11 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
-        <option value="HTML File" />
-        <option value="Jsp File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;huyencute11&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="1d42a5ba-1240-4fad-acb0-219600ad0554" />
-        <option name="url" value="https://github.com/huyencute11/WWW_WEEK02.git" />
-      </UrlAndAccount>
-    </option>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -90,42 +70,26 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "D:/Studying/WWW_WEEK02",
+    "last_opened_file_path": "D:/WWW_KTPM16A/First_Project/TranThiMinhHuyen_20105231_WWW",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.3406214",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Studying\WWW_WEEK02\src\data" />
-      <recent name="D:\Studying\WWW_WEEK02\src\main\Webapp" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Studying\WWW_WEEK02\src\main\web" />
-      <recent name="D:\Studying\WWW_WEEK02\src\main\Webapp" />
-    </key>
-  </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.11">
-    <configuration name="HelloResource" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="www.week2.www_lab02.services.HelloResource" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="www.week2.www_lab02.Main" />
       <module name="WWW_Lab02.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="www.week2.www_lab02.services.*" />
+          <option name="PATTERN" value="www.week2.www_lab02.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,24 +97,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 10.1.11" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.11" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="C:/Program Files/Java/jdk-17">
-      <option name="UPDATING_POLICY" value="restart-server" />
+    <configuration name="Tomcat 10.1.11" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.11" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="hot-swap-classes" />
       <deployment>
-        <artifact name="Gradle : www.week2 : WWW_Lab02-1.0-SNAPSHOT.war (exploded)">
+        <artifact name="Gradle : www.week2 : WWW_Lab02-1.0-SNAPSHOT.war">
           <settings>
-            <option name="CONTEXT_PATH" value="/week2" />
+            <option name="CONTEXT_PATH" value="/Gradle___www_week2___WWW_Lab02_1_0_SNAPSHOT_war" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="87c3a668-7820-4094-beac-67714e2666a9" />
-        <option name="DEPLOY_TOMCAT_APPS" value="true" />
         <option name="HTTP_PORT" value="8081" />
-        <option name="PRESERVE_SESSIONS" value="true" />
       </server-settings>
-      <log_file alias="Tomcat Manager Log" path="%IDEA_RUN:CATALINA_BASE%/logs/manager.*" />
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
@@ -219,95 +181,13 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Gradle : www.week2 : WWW_Lab02-1.0-SNAPSHOT.war (exploded)" />
+          <artifact name="Gradle : www.week2 : WWW_Lab02-1.0-SNAPSHOT.war" />
         </option>
       </method>
     </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
-      <deployment />
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="5f75efcc-21b1-43e0-8b2e-b74b55f6cf83" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="52427" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.HelloResource" />
-      <item itemvalue="Tomcat Server.Tomcat 10.1.11" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HelloResource" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -327,15 +207,13 @@
       <workItem from="1695221550006" duration="2479000" />
       <workItem from="1695295041993" duration="7789000" />
       <workItem from="1695436279658" duration="5359000" />
-      <workItem from="1695607510360" duration="10933000" />
-      <workItem from="1695624565140" duration="5018000" />
-      <workItem from="1695629642794" duration="6154000" />
-      <workItem from="1695690261744" duration="3706000" />
-      <workItem from="1695885010685" duration="4119000" />
-      <workItem from="1695955170475" duration="19164000" />
-      <workItem from="1696383841627" duration="686000" />
-      <workItem from="1696385649032" duration="1352000" />
-      <workItem from="1696480140050" duration="4419000" />
+      <workItem from="1696047247471" duration="305000" />
+      <workItem from="1696849701329" duration="353000" />
+      <workItem from="1697200029400" duration="2665000" />
+      <workItem from="1697250856673" duration="4165000" />
+      <workItem from="1697379051870" duration="770000" />
+      <workItem from="1697630946004" duration="1831000" />
+      <workItem from="1698321258326" duration="1730000" />
     </task>
     <task id="LOCAL-00001" summary="Create database">
       <option name="closed" value="true" />
@@ -353,23 +231,7 @@
       <option name="project" value="LOCAL" />
       <updated>1695297786480</updated>
     </task>
-    <task id="LOCAL-00003" summary="method call api">
-      <option name="closed" value="true" />
-      <created>1695636296987</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1695636296987</updated>
-    </task>
-    <task id="LOCAL-00004" summary="method call api">
-      <option name="closed" value="true" />
-      <created>1695976146817</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1695976146817</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,32 +250,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Create database" />
-    <MESSAGE value="method call api" />
-    <option name="LAST_COMMIT_MESSAGE" value="method call api" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>jar://C:/Program Files/Java/jdk-17/lib/src.zip!/java.base/java/net/URL.java</url>
-          <line>1125</line>
-          <properties class="java.net.URL">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/www/week2/www_lab02/Main.java</url>
-          <line>9</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/www/week2/www_lab02/models/Customer.java</url>
-          <line>6</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <option name="LAST_COMMIT_MESSAGE" value="Create database" />
   </component>
 </project>

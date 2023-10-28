@@ -53,7 +53,7 @@
         const tableBody = document.getElementById("customer-list");
 
         // Fetch data from the API
-        fetch("http://localhost:8081/week2/api/customer")
+        fetch("http://localhost:8081/Gradle___www_week2___WWW_Lab02_1_0_SNAPSHOT_war/api/customer")
             .then(response => response.json())
             .then(data => {
                 data.forEach(customer => {
