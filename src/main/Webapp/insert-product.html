@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container-sm">
+    <form class="container mt-5" id="product-form">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" required>
+        </div>
+        <div class="form-group">
+            <label for="desc">Description</label>
+            <input type="text" class="form-control" id="desc" name="desc" placeholder="Enter description" required>
+        </div>
+        <div class="form-group">
+            <label for="unit">Unit</label>
+            <input type="text" class="form-control" id="unit" name="unit" placeholder="Enter unit" required>
+        </div>
+        <div class="form-group">
+            <label for="manufacturer">Manufacturer Name</label>
+            <input type="text" class="form-control" id="manufacturer" name="manufacturer" placeholder="Enter manufacturer" required>
+        </div>
+        <div class="form-group">
+            <label for="status">Status</label>
+            <select class="form-control" id="status" name="status">
+                <option value="0" >ACTIVE</option>
+                <option value="1" >ON_LEAVE</option>
+                <option value="2">TERMINATED</option>
+                <!-- Add more options if needed -->
+            </select>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Submit">
+        <input type="reset" class="btn btn-secondary" value="Reset">
+    </form>
+    <script>
+        const form = document.getElementById("product-form");
+
+        form.addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const a = document.getElementById("status").value;
+            const data = {
+                name: document.getElementById("name").value,
+                description: document.getElementById("desc").value,
+                unit: document.getElementById("unit").value,
+                manufacturerName: document.getElementById("manufacturer").value,
+                productStatus: a
+            };
+            try {
+                // Send a POST request to the API
+                const response = await fetch("http://localhost:8081/week2/api/product", {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    method: "POST",
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    alert("Employee added successfully!");
+                    form.reset(); // Clear the form
+                } else {
+                    alert("Failed to add an employee. Please try again.");
+                }
+            } catch (error) {
+                console.error("An error occurred:", error);
+            }
+        });
+    </script>
+</div>
+</body>
+</html>

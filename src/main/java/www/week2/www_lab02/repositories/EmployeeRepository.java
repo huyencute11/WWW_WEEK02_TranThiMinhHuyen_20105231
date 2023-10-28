@@ -19,18 +19,42 @@ public class EmployeeRepository {
         this.sessionFactory = MySessionFactory.getInstance().getSessionFactory();
     }
     public void insertEmp(Employee employee){
-        Transaction transaction = null;
-        try(Session session = sessionFactory.openSession()){
-            transaction = session.beginTransaction();
+       Transaction transaction = null;
+       try(Session session = sessionFactory.openSession()){
+           transaction = session.beginTransaction();
             session.persist(employee);
             transaction.commit();
-        }catch (Exception e){
-            logger.error(e.getMessage());
+       }catch (Exception e){
+           logger.error(e.getMessage());
             transaction.rollback();
         }
     }
-    public void setStatus(Employee employee , EmployeeStatus status){
-        employee.setStatus(status);
+    public void updateStatus(Employee employee , EmployeeStatus status){
+        Transaction transaction = null;
+        try (Session session = sessionFactory.openSession()) {
+            transaction = session.beginTransaction();
+
+            // Execute the named query "Employee.updateStatus"
+            int updatedCount = session.createNamedQuery("Employee.updateStatus")
+                    .setParameter("status", status)
+                    .setParameter("id", employee.getId())
+                    .executeUpdate();
+
+            if (updatedCount == 1) {
+                // The update was successful
+                employee.setStatus(status); // Update the local employee object
+                transaction.commit();
+            } else {
+                // Handle the case where the update didn't affect any rows (no employee with the specified ID)
+                logger.error("Employee with ID " + employee.getId() + " not found.");
+                transaction.rollback();
+            }
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        }
     }
     public void updateEmp(Employee employee){
         Transaction transaction = null;
@@ -61,7 +85,7 @@ public class EmployeeRepository {
         Transaction transaction = null;
         try(Session session = sessionFactory.openSession()){
             transaction = session.beginTransaction();
-            List<Employee> employees = session.createQuery("from Employee",Employee.class).getResultList();
+            List<Employee>  employees = session.createNamedQuery("Employee.findAll", Employee.class).getResultList();
             transaction.commit();
             return employees;
         }catch (Exception e){
@@ -86,4 +110,28 @@ public class EmployeeRepository {
         }
         return null;
     }
+    //delete
+    public boolean deleteEmployeeById(int employeeId) {
+        Transaction transaction = null;
+        try (Session session = sessionFactory.openSession()) {
+            transaction = session.beginTransaction();
+
+            // Retrieve the employee by ID
+            Employee employee = session.get(Employee.class, employeeId);
+
+            if (employee != null) {
+                session.remove(employee);
+                return true;
+            }
+
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            logger.error("Error deleting employee: " + e.getMessage());
+        }
+        return false;
+    }
+
 }

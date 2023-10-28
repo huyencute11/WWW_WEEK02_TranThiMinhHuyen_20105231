@@ -18,7 +18,6 @@ public class ProductImage {
 
     @ManyToOne
     @JoinColumn(name = "product_id", referencedColumnName = "product_id")
-
     private Product product;
 
     @Column(name = "path", length = 255)

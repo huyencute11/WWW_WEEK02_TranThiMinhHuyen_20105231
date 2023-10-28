@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container-sm">
+    <form class="container mt-5" id="employee-form">
+        <div class="form-group">
+            <label for="custName">Full Name</label>
+            <input type="text" class="form-control" id="custName" name="custName" placeholder="Enter full name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter phone" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" name="address" placeholder="Enter address" required>
+        </div>
+        <div class="form-group">
+            <label for="status">Status</label>
+            <label for="status">Status</label>
+            <select class="form-control" id="status" name="status">
+                <option value="0" >ACTIVE</option>
+                <option value="1" >ON_LEAVE</option>
+                <option value="2">TERMINATED</option>
+                <!-- Add more options if needed -->
+            </select>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Submit">
+        <input type="reset" class="btn btn-secondary" value="Reset">
+    </form>
+    <script>
+        const form = document.getElementById("employee-form");
+        // "name": "Nước ép ổi",
+        //     "description": "Tốt cho sức khỏe",
+        //     "unit": null,
+        //     "manufacturerName": "Việt Nam",
+        //     "productStatus": "ACTIVE"
+        form.addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const a = document.getElementById("status").value;
+            const data = {
+                name: document.getElementById("custName").value,
+                description: document.getElementById("email").value,
+                unit: document.getElementById("phone").value,
+                manufacturerName: document.getElementById("address").value,
+                productStatus: a
+            };
+            try {
+                // Send a POST request to the API
+                const response = await fetch("http://localhost:8081/week2/api/customer", {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    method: "POST",
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    alert("Employee added successfully!");
+                    form.reset(); // Clear the form
+                } else {
+                    alert("Failed to add an employee. Please try again.");
+                }
+            } catch (error) {
+                console.error("An error occurred:", error);
+            }
+        });
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        /* Add background color to alternating rows for better readability */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Order ID</th>
+        <th>Order date</th>
+        <th>Employee</th>
+        <th>Customer</th>
+        <th>Detail order</th>
+    </tr>
+    </thead>
+    <tbody id="order-list">
+    <!-- Employee data will be inserted here dynamically -->
+    </tbody>
+</table>
+</body>
+</html>
+
+<script>
+    function fetchAndPopulateTable() {
+        const tableBody = document.getElementById("order-list");
+        // Function to handle the employee deletion
+        function handleDeleteClick(employeeId) {
+            // Make an API request to delete the employee with the given ID
+            fetch(`http://localhost:8081/week2/api/order`, {
+            })
+                .then(response => {
+                    console.log(response)
+                    if (response.status === 200) {
+                        window.location.reload();
+                    }
+                })
+                .catch(error => {
+                    console.error("Error deleting employee:", error);
+                });
+        }
+        // Fetch data from the API
+        fetch("http://localhost:8081/week2/api/order")
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(order => {
+                    const row = tableBody.insertRow();
+                    row.insertCell(0).textContent = order.orderId;
+                    const date = new Date(order.orderDate).toLocaleDateString();
+                    row.insertCell(1).textContent = date;
+                    // Convert timestamp to a readable date format
+                    row.insertCell(2).textContent = order?.employee?.fullName;
+                    row.insertCell(3).textContent = order?.customer?.custName;
+                    const linkCell = row.insertCell(4);
+                    const link = document.createElement("a");
+                    link.href = './order-detail.html?id=' + order.orderId;
+                    link.textContent = 'Update employee'; // You can change the link text as needed
+                    linkCell.appendChild(link);
+                });
+            })
+            .catch(error => {
+                console.error("Error fetching data:", error);
+            });
+    }
+
+    // Call the fetchAndPopulateTable function when the page loads
+    window.onload = fetchAndPopulateTable;
+
+</script>

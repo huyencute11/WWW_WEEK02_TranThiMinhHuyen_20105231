@@ -19,7 +19,6 @@
 CREATE DATABASE IF NOT EXISTS `dbweek02` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `dbweek02`;
 
-
 -- Dumping data for table dbweek02.customer: ~5 rows (approximately)
 DELETE FROM `customer`;
 INSERT INTO `customer` (`cust_id`, `address`, `cust_name`, `email`, `phone`) VALUES

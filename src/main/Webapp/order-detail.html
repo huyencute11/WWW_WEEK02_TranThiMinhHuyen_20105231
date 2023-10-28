@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Product Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total Price</th>
+    </tr>
+    </thead>
+    <tbody id="table-body">
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="3">Total</td>
+        <td id="total-price">0.0</td>
+    </tr>
+    </tfoot>
+</table>
+
+<script>
+    window.onload = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const orderId = urlParams.get('id');
+        const tableBody = document.getElementById('table-body');
+        const totalPriceCell = document.getElementById('total-price');
+        let total = 0.0;
+        if (orderId) {
+            // Fetch employee data based on the employeeId
+            fetch(`http://localhost:8081/week2/api/order-detail/${orderId}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Split the date into its components
+                    data.forEach(item => {
+                        console.log(item)
+                        const row = tableBody.insertRow();
+                        const product = item?.orderDetailPK?.product;
+
+                        row.insertCell(0).textContent = product.name;
+                        row.insertCell(1).textContent = item.quantity;
+                        row.insertCell(2).textContent = item.price;
+                        row.insertCell(3).textContent = item.totalPrice;
+
+                        total += item.totalPrice;
+                        totalPriceCell.textContent = total;
+                    });
+
+                })
+                .catch(error => {
+                    console.error("Error fetching customer data:", error);
+                });
+        } else {
+            // Handle the case where the 'id' query parameter is missing or invalid
+            console.e
+        }
+    }
+</script>
+</body>
+</html>

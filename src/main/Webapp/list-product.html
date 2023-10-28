@@ -63,7 +63,6 @@
                     row.insertCell(5).textContent = product.productStatus;
                     const linkCell = row.insertCell(6);
                     const link = document.createElement("a");
-                    console.log(link)
                     console.log(product.productID)
                     link.href = `image-of-product.html?id=${product.productID}`;
                     link.textContent = "See image";

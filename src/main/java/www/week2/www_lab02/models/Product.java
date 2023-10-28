@@ -32,7 +32,6 @@ public class Product {
 
 
     @OneToMany(mappedBy = "orderDetailPK.product", fetch = FetchType.EAGER)
-//    @OneToMany(mappedBy = "employee",fetch = FetchType.EAGER)
     @JsonIgnore
     private List<OrderDetail> orderDetails;
 
@@ -50,7 +49,6 @@ public class Product {
         this.manufacturer = manufacturer;
         this.status = status;
     }
-
 
     public Long getProductID() {
         return productID;
@@ -125,8 +123,6 @@ public class Product {
                 ", unit='" + unit + '\'' +
                 ", manufacturerName='" + manufacturer + '\'' +
                 ", productStatus=" + status +
-//                ", productImageList=" + productImageList +
-//                ", orderDetails=" + orderDetails +
                 '}';
     }
 }
