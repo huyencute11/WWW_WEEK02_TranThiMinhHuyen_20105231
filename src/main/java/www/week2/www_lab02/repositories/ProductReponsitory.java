@@ -57,6 +57,10 @@ public class ProductReponsitory {
         }
         return null;
     }
+    //find price last update for each product
+
+
+
     public void setStatus(Product product , ProductStatus status){
         product.setProductStatus(status);
     }

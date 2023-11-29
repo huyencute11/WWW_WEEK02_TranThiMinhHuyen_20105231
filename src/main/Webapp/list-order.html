@@ -46,7 +46,7 @@
         // Function to handle the employee deletion
         function handleDeleteClick(employeeId) {
             // Make an API request to delete the employee with the given ID
-            fetch(`http://localhost:8081/week2/api/order`, {
+            fetch(`http://localhost:8081/Gradle___www_week2___WWW_Lab02_1_0_SNAPSHOT_war/api/order`, {
             })
                 .then(response => {
                     console.log(response)
@@ -59,7 +59,7 @@
                 });
         }
         // Fetch data from the API
-        fetch("http://localhost:8081/week2/api/order")
+        fetch("http://localhost:8081/Gradle___www_week2___WWW_Lab02_1_0_SNAPSHOT_war/api/order")
             .then(response => response.json())
             .then(data => {
                 data.forEach(order => {
@@ -73,7 +73,7 @@
                     const linkCell = row.insertCell(4);
                     const link = document.createElement("a");
                     link.href = './order-detail.html?id=' + order.orderId;
-                    link.textContent = 'Update employee'; // You can change the link text as needed
+                    link.textContent = 'Order detail'; // You can change the link text as needed
                     linkCell.appendChild(link);
                 });
             })

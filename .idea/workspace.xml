@@ -4,15 +4,62 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea6a507d-68c3-4ce0-a792-26224431cc2a" name="Changes" comment="Create database">
+    <list default="true" id="ea6a507d-68c3-4ce0-a792-26224431cc2a" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/img_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/after_insertEm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/after_insert_customer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/customer_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/customer_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/customer_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/customer_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/customer_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/customer_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/customer_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/customer_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/customer_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/filter_by_name_cus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/insert_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/insert_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/insert_customer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/insert_employee.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/list_customer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/list_employee.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/list_order.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/reportByDate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/user_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/user_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/user_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view_orderDetail.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/converters/ProductDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/converters/ReportDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/database_week02.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/database_week02.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Webapp/dashboardEmployee.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Webapp/dashboardEmployee.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Webapp/image-of-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Webapp/image-of-product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Webapp/list-customer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Webapp/list-customer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Webapp/list-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Webapp/list-product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/models/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/models/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Webapp/insert-customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Webapp/insert-customer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Webapp/insert-employee.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Webapp/insert-employee.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Webapp/insert-order.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Webapp/insert-order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Webapp/insert-product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Webapp/insert-product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Webapp/list-order.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Webapp/list-order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Webapp/order-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Webapp/order-detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Webapp/update-customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Webapp/update-customer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Webapp/update-employee.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Webapp/update-employee.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/models/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/models/OrderDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/models/OrderDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/repositories/OrderDetailReponsitory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/repositories/OrderDetailReponsitory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/repositories/OrderReponsitory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/repositories/OrderReponsitory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/repositories/ProductImageReponsitory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/repositories/ProductImageReponsitory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/repositories/ProductPriceReponsitory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/repositories/ProductPriceReponsitory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/repositories/ProductReponsitory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/repositories/ProductReponsitory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/services/OrderDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/services/OrderDetailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/services/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/services/ProductPriceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/services/ProductPriceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/www/week2/www_lab02/services/ProductService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +94,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;huyencute11&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="c13eab49-e340-469a-bcd4-38e846951a4e" />
+        <option name="url" value="https://github.com/huyencute11/WWW_WEEK02.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -68,21 +129,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/WWW_KTPM16A/First_Project/TranThiMinhHuyen_20105231_WWW",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/WWW_KTPM16A/HuyenCutePhomaiqe&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.11">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="www.week2.www_lab02.Main" />
@@ -214,6 +276,25 @@
       <workItem from="1697379051870" duration="770000" />
       <workItem from="1697630946004" duration="1831000" />
       <workItem from="1698321258326" duration="1730000" />
+      <workItem from="1698484623222" duration="1317000" />
+      <workItem from="1698503608083" duration="8651000" />
+      <workItem from="1698589564406" duration="5422000" />
+      <workItem from="1698681091846" duration="659000" />
+      <workItem from="1698837260898" duration="2289000" />
+      <workItem from="1698848612079" duration="4393000" />
+      <workItem from="1699017704637" duration="1822000" />
+      <workItem from="1699064544020" duration="5907000" />
+      <workItem from="1699074284078" duration="8297000" />
+      <workItem from="1699101311502" duration="1285000" />
+      <workItem from="1699126980473" duration="2367000" />
+      <workItem from="1699190813082" duration="1296000" />
+      <workItem from="1699282500099" duration="1890000" />
+      <workItem from="1699363322131" duration="7842000" />
+      <workItem from="1699445367450" duration="6412000" />
+      <workItem from="1699671708368" duration="727000" />
+      <workItem from="1700048488655" duration="1328000" />
+      <workItem from="1701082947666" duration="7991000" />
+      <workItem from="1701178659063" duration="5486000" />
     </task>
     <task id="LOCAL-00001" summary="Create database">
       <option name="closed" value="true" />
@@ -231,7 +312,23 @@
       <option name="project" value="LOCAL" />
       <updated>1695297786480</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update">
+      <option name="closed" value="true" />
+      <created>1698484786141</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698484786142</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update">
+      <option name="closed" value="true" />
+      <created>1698484924155</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698484924155</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,6 +347,22 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Create database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create database" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/www/week2/www_lab02/repositories/OrderReponsitory.java</url>
+          <line>86</line>
+          <properties class="www.week2.www_lab02.repositories.OrderReponsitory" method="getAllOrdersInDateRange">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

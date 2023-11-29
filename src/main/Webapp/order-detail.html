@@ -46,7 +46,7 @@
         let total = 0.0;
         if (orderId) {
             // Fetch employee data based on the employeeId
-            fetch(`http://localhost:8081/week2/api/order-detail/${orderId}`)
+            fetch(`http://localhost:8081/Gradle___www_week2___WWW_Lab02_1_0_SNAPSHOT_war/api/order-detail/${orderId}`)
                 .then(response => response.json())
                 .then(data => {
                     // Split the date into its components
@@ -58,9 +58,8 @@
                         row.insertCell(0).textContent = product.name;
                         row.insertCell(1).textContent = item.quantity;
                         row.insertCell(2).textContent = item.price;
-                        row.insertCell(3).textContent = item.totalPrice;
 
-                        total += item.totalPrice;
+                        total += item.price;
                         totalPriceCell.textContent = total;
                     });
 

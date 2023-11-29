@@ -8,6 +8,12 @@ import java.util.List;
 
 @Entity
 @Table(name = "`order`")
+@NamedQueries({
+        @NamedQuery(
+                name = "Order.getAllOrdersByEmAndDate",
+                query = "SELECT o FROM Order o WHERE o.employee = :employee AND o.orderDate >= :startDate AND o.orderDate <= :endDate"
+        ),
+})
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

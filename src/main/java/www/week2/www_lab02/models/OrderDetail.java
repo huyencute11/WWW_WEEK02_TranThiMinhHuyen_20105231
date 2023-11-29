@@ -1,5 +1,6 @@
 package www.week2.www_lab02.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import www.week2.www_lab02.pk.OrderDetailPK;
 
@@ -15,6 +16,14 @@ import java.io.Serializable;
         @NamedQuery(
                 name = "OrderDetail.findOrderDetailByProductId",
                 query = "SELECT od FROM OrderDetail od WHERE od.orderDetailPK.product.id = :productId"
+        ),
+        @NamedQuery(
+                name = "getDailyRevenue",
+                query = "SELECT DATE(o.orderDate) AS order_day, SUM(od.price) AS daily_revenue " +
+                        "FROM Order o " +
+                        "JOIN OrderDetail od " +
+                        "GROUP BY order_day " +
+                        "ORDER BY order_day"
         )
 })
 public class OrderDetail {
@@ -72,9 +81,6 @@ public class OrderDetail {
     public void setNote(String note) {
         this.note = note;
     }
-    public double getTotalPrice(){
-        return this.price * this.quantity;
-    }
 
     @Override
     public String toString() {
@@ -82,7 +88,6 @@ public class OrderDetail {
                 "orderDetailPK=" + orderDetailPK +
                 ", quantity=" + quantity +
                 ", price=" + price +
-                ", total=" + getTotalPrice() +
                 ", note='" + note + '\'' +
                 '}';
     }

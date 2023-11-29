@@ -21,6 +21,19 @@ public class OrderDetailService {
         orderDetailReponsitory.insertOrderDetail(orderDetail);
         return Response.ok(orderDetail).build();
     }
+    @POST
+    @Path("/insert-order-details")
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response insertOrderDetails(List<OrderDetail> orderDetails) {
+        try {
+            orderDetailReponsitory.insertOrderDetails(orderDetails);
+            return Response.ok("Order details inserted successfully").build();
+        } catch (Exception e) {
+            return Response.serverError().entity("Failed to insert order details: " + e.getMessage()).build();
+        }
+    }
+
     @GET
     @Path("/{orderId}")
     @Produces("application/json")

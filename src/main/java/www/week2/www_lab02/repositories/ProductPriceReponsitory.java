@@ -80,7 +80,7 @@ public class ProductPriceReponsitory {
         }
         return null;
     }
-    public ProductPrice findMostRecentPriceByProductId(int productId) {
+    public ProductPrice findMostRecentPriceByProductId(long productId) {
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
@@ -107,6 +107,8 @@ public class ProductPriceReponsitory {
         }
         return null;
     }
+
+
 
 
 

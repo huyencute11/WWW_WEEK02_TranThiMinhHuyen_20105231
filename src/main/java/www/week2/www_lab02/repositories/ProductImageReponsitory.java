@@ -41,7 +41,7 @@ public class ProductImageReponsitory {
         return null;
     }
 
-    public List<ProductImage> getProductImageById(int productImageId) {
+    public List<ProductImage> getProductImageById(long productImageId) {
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();

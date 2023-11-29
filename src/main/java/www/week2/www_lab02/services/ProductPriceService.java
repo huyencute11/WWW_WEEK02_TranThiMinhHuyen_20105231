@@ -2,6 +2,7 @@ package www.week2.www_lab02.services;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Response;
+import www.week2.www_lab02.models.OrderDetail;
 import www.week2.www_lab02.models.ProductImage;
 import www.week2.www_lab02.models.ProductPrice;
 import www.week2.www_lab02.repositories.ProductPriceReponsitory;
@@ -23,6 +24,8 @@ public class ProductPriceService {
         productPriceReponsitory.insertProductPrice(productPrice);
         return Response.ok(productPrice).build();
     }
+
+
     @GET
     @Path("/getAllPriceById/{productId}")
     @Produces("application/json")

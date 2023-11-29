@@ -49,7 +49,7 @@
 
             if (employeeId) {
                 // Fetch employee data based on the employeeId
-                fetch(`http://localhost:8081/week2/api/employees/${employeeId}`)
+                fetch(`http://localhost:8081/week2/Gradle___www_week2___WWW_Lab02_1_0_SNAPSHOT_war/employees/${employeeId}`)
                     .then(response => response.json())
                     .then(data => {
                         const dob = new Date(data.dob)

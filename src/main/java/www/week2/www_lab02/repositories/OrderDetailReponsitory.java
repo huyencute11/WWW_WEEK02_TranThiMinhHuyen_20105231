@@ -7,35 +7,41 @@ import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import www.week2.www_lab02.connectDB.MySessionFactory;
+import www.week2.www_lab02.converters.ReportDTO;
 import www.week2.www_lab02.models.OrderDetail;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 public class OrderDetailReponsitory {
     private SessionFactory sessionFactory;
     private final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
+
     public OrderDetailReponsitory() {
         this.sessionFactory = MySessionFactory.getInstance().getSessionFactory();
     }
+
     public void insertOrderDetail(OrderDetail orderDetail) {
         Transaction transaction = null;
-        try(Session session = sessionFactory.openSession()){
+        try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
             session.persist(orderDetail);
             transaction.commit();
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error(e.getMessage());
             transaction.rollback();
         }
     }
-    public List<OrderDetail> getAllOrderDetail(){
+
+    public List<OrderDetail> getAllOrderDetail() {
         Transaction transaction = null;
-        try(Session session = sessionFactory.openSession()){
+        try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
-            List<OrderDetail> orderDetails = session.createQuery("from OrderDetail ",OrderDetail.class).getResultList();
+            List<OrderDetail> orderDetails = session.createQuery("from OrderDetail ", OrderDetail.class).getResultList();
             transaction.commit();
             return orderDetails;
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error(e.getMessage());
             transaction.rollback();
         }
@@ -65,5 +71,35 @@ public class OrderDetailReponsitory {
         return null;
     }
 
+    public void insertOrderDetails(List<OrderDetail> orderDetails) {
+        Transaction transaction = null;
+        try (Session session = sessionFactory.openSession()) {
+            transaction = session.beginTransaction();
+            for (OrderDetail orderDetail : orderDetails) {
+                session.persist(orderDetail);
+            }
+            transaction.commit();
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        }
+    }
 
+    public List<Object[]> reportRevenueDayly() {
+        Transaction transaction = null;
+        try (Session session = sessionFactory.openSession()) {
+            List<Object[]> results = session.createNamedQuery("getDailyRevenue").getResultList();
+
+            transaction.commit();
+            return results;
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        }
+        return null;
+    }
 }
