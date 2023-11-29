@@ -15,7 +15,12 @@ JAVA HIBERNATE
  - Step 5: Test api in postman (ex: http://localhost:8081/week2/api/productImage)
 ![img_2.png](img_2.png)
 
-# Business rule for admin (employees in shop)
+# Business rule for admin (Employees are working in shop can manage shop)
+ + Add employee, update (for rule admin)
+ + Add customer, update (employees)
+ + Insert order
+ + Manage product: add product, update...
+ + Report: Report revenue, order by daily, order by monthly...
  1 Employee
   - List employee
 ![list_employee.png](public%2Flist_employee.png)
