@@ -34,7 +34,16 @@ JAVA HIBERNATE
   - Insert customer
 ![insert_customer.png](public%2Finsert_customer.png)
 ![after_insert_customer.png](public%2Fafter_insert_customer.png)
-## 33 Manage Order
+## 3 Manage Product
+- Get list product
+  ![image](https://github.com/huyencute11/WWW_WEEK02/assets/88650282/53006420-ac0a-4747-be2c-cd55464875a9)
+  -> See all image product on click see image
+  ![image](https://github.com/huyencute11/WWW_WEEK02/assets/88650282/3789c405-b8aa-416a-87c0-9d298a2660c8)
+
+- Add new product
+![image](https://github.com/huyencute11/WWW_WEEK02/assets/88650282/fa38c610-f85b-46e8-a042-45d43c17935e)
+
+## 4 Manage Order
 - List order
 ![list_order.png](public%2Flist_order.png)
 - Admin insert order
@@ -45,7 +54,7 @@ Insert success
 ![img_4.png](public%2Fimg_4.png)
 - Order detail!
 ![img_3.png](public%2Fimg_3.png)
-## 4 Manage Report order by date
+## 5 Manage Report order by date
 - Report order by date
 ![reportByDate.png](public%2FreportByDate.png)
 - Report revenue by employees
