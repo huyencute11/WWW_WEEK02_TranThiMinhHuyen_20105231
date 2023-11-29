@@ -21,12 +21,12 @@ JAVA HIBERNATE
  + Insert order
  + Manage product: add product, update...
  + Report: Report revenue, order by daily, order by monthly...
- 1 Employee
+## 1 Manage Employee
   - List employee
 ![list_employee.png](public%2Flist_employee.png)
   - Insert employee
 ![insert_employee.png](public%2Finsert_employee.png)
-2 Customer
+## 2 Manage Customer
   - List customer
 ![list_customer.png](public%2Flist_customer.png)
   - Filter customer (ex: by name)
@@ -34,7 +34,7 @@ JAVA HIBERNATE
   - Insert customer
 ![insert_customer.png](public%2Finsert_customer.png)
 ![after_insert_customer.png](public%2Fafter_insert_customer.png)
-3 Order
+## 33 Manage Order
 - List order
 ![list_order.png](public%2Flist_order.png)
 - Admin insert order
@@ -45,8 +45,13 @@ Insert success
 ![img_4.png](public%2Fimg_4.png)
 - Order detail!
 ![img_3.png](public%2Fimg_3.png)
+## 4 Manage Report order by date
 - Report order by date
 ![reportByDate.png](public%2FreportByDate.png)
+- Report revenue by employees
+  ![28_5](https://github.com/huyencute11/WWW_WEEK02/assets/88650282/43e1245d-2ea0-40d4-9c51-4a9d6fbc055f)
+![28_1](https://github.com/huyencute11/WWW_WEEK02/assets/88650282/2282198b-116c-4b45-8dbc-2f927a632967)
+
 
 
 # Business rule for customer when shopping online
